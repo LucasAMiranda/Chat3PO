@@ -14,6 +14,7 @@ class Client:
         server_address = (self.config['ip'], self.config['port'])
         print(sys.stdout, 'connecting to %s port %s' % server_address)
         sockClient.connect(server_address)
+        sockClient.accept()
 
         try:
 
@@ -22,7 +23,7 @@ class Client:
             print(message)
             sockClient.sendall(message)
 
-           # Procurando resposta da conexão
+           # Fetching connection response
             received = 0
             expected = len(message)
 
