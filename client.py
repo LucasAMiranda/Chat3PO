@@ -5,9 +5,9 @@ import json
 class Cliente:
     def __init__(self):
         with open('config.json', 'r') as config_file:
-            try:
+           # try:
                 self.config = json.load(config_file)
-            except json.decoder.JSONDecodeError:
+            #except json.decoder.JSONDecodeError:
                 self.client = dict()
 
         with open("config.json", 'w') as fp:
